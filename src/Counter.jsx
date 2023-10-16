@@ -4,7 +4,7 @@ const Counter = () => {
   const [step, setStep] = useState(1);
   const [count, setCount] = useState(0);
   const currDate = new Date();
-  const calcDate = currDate.setDate(currDate.getDate() + count);
+  currDate.setDate(currDate.getDate() + count);
 
   const clickHandler = () => {
     setCount(0);
@@ -51,7 +51,7 @@ const Counter = () => {
           {count === 0
             ? `Today is : ${currDate.toDateString()} `
             : count > 0
-            ? `${count} from today is : ${currDate.toDateString()}`
+            ? `${count} Day from today is : ${currDate.toDateString()}`
             : `${Math.abs(count)} ago was : ${currDate.toDateString()}`}
         </p>
         {step !== 1 || count !== 0 ? (
